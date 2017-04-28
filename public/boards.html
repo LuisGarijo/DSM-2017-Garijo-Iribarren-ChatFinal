@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang='eng'>
+
+<head>
+	<title>Terra Chat</title>
+
+	<meta http-equiv='content-type' content='text/html; charset=UTF-8' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+
+	<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js'> </script>
+	<script src='bootstrap-3.3.7-dist/js/bootstrap.min.js'></script>
+	<script src='client.js'></script>
+	<script src="/socket.io/socket.io.js"></script>
+
+	<link href='bootstrap-3.3.7-dist/css/bootstrap.min.css' media='all' rel='stylesheet' />
+	<link  href='css/boards.css' rel='stylesheet' type='text/css'/>
+
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/css/basic/emojify.min.css" />
+	<script src="//cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/js/emojify.min.js"></script>
+
+</head>
+
+<body>
+
+	<div class='container-fluid' id='chat_header'>
+
+		<div class='navbar-header'>
+
+			<a href='./index.html' class='navbar-brand'><img src='terra_small.png' alt='Main page' id='chat_logo'/></a>
+			<button type='button' class='navbar-toggle btn btn-lg' data-toggle='collapse' data-target='.navbar-collapse' id='collapse_button'>
+				<i class='glyphicon glyphicon-menu-hamburger'></i>
+			</button>
+
+		</div>
+		
+		<ul class='nav navbar-nav navbar-right collapse navbar-collapse' id='link_list'>
+			
+			<li><a href='#' class='btn btn-lg' id='logout_button'>Log Out</a></li>
+			<li>
+				<div class='hidden-sm hidden-md hidden-lg col-xs-12 well' id='user_div_header'>
+					<div class='well viewport' id='user_list_div_header'>
+						<ul class='list-unstyled' id='user_list_header'>
+						</ul>
+					</div>
+				</div>
+			</li>
+		</ul>
+		
+	</div>
+
+	<div class='container-fluid' id='chat_body'>
+
+		<div id='inner_body'>
+
+			<div class='hidden-xs col-sm-3 col-md-3 well' id='user_div'>
+				<div class='well viewport' id='user_list_div'>
+					<ul class='list-unstyled' id='user_list'>
+					</ul>
+				</div>
+			</div>
+
+			<div class='col-xs-12 col-sm-9 col-md-9 well' id='message_div'>
+				<div class='well' id='message_inner'>
+					<div class='well viewport' id='message_board'></div>
+					<div id='message_input'>
+
+						<form class="form-inline" name="formuMessage" id='messageFormu' method="post">
+							<input id='send_message' class='col-xs-10 col-sm-10'>
+
+							<button class='btn btn-sm col-xs-2 hidden-sm hidden-md hidden-lg' type='submit' name='submit' id='MessageButton'>
+								<i class='glyphicon glyphicon-send'></i>
+							</button>
+
+							<input class='btn btn-sm hidden-xs col-md-2' type='submit' value='Send' id='MessageButton'>
+						</form>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class='container-fluid text-center hidden-xs' id='chat_footer'>
+			<br>Garijo - Iribarren 2017
+	</div>
+
+</body>
+
+</html>
